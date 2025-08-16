@@ -1,0 +1,81 @@
+/* Body */
+body {
+  margin: 0;
+  font-family: "Verdana", sans-serif;
+  background: linear-gradient(135deg, #dbe6e4, #b8d8ba);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card container */
+.container {
+  background: #fefefe;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  width: 360px;
+  text-align: center;
+  border: 3px solid #6ab04c;
+}
+
+/* Heading */
+h1 {
+  color: #2d572c;
+  margin-bottom: 15px;
+}
+
+/* Input */
+input {
+  width: 80%;
+  padding: 10px;
+  margin: 12px 0;
+  border: 2px solid #6ab04c;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+}
+
+/* Button */
+button {
+  padding: 10px 20px;
+  background: #6ab04c;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: #218c47;
+}
+
+/* Feedback */
+#feedback {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.low { color: #2980b9; }       /* Blue for too low */
+.high { color: #c0392b; }      /* Red for too high */
+.correct { color: #27ae60; }   /* Green for correct */
+.error { color: #8e44ad; }     /* Purple for invalid */
+
+/* Guess history */
+#history {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #444;
+}
+#history span {
+  display: inline-block;
+  margin: 3px;
+  padding: 4px 8px;
+  background: #eafbea;
+  border: 1px solid #6ab04c;
+  border-radius: 6px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Basic Calculator</h1>
+    
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1" placeholder="Enter first number">
+
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2" placeholder="Enter second number">
+
+    <div class="buttons">
+      <button onclick="calculate()">Calculate</button>
+    </div>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculate() {
+      const n1 = parseFloat(document.getElementById("num1").value);
+      const n2 = parseFloat(document.getElementById("num2").value);
+      const resultDiv = document.getElementById("result");
+
+      if (isNaN(n1) || isNaN(n2)) {
+        resultDiv.innerHTML = "<p class='error'>⚠️ Please enter valid numbers!</p>";
+        return;
+      }
+
+      const addition = n1 + n2;
+      const subtraction = n1 - n2;
+      const multiplication = n1 * n2;
+      let division;
+
+      if (n2 === 0) {
+        division = "❌ Division by zero is not allowed!";
+      } else {
+        division = `${n1} ÷ ${n2} = ${n1 / n2}`;
+      }
+
+      resultDiv.innerHTML = `
+        <p><strong>Addition:</strong> ${n1} + ${n2} = ${addition}</p>
+        <p><strong>Subtraction:</strong> ${n1} - ${n2} = ${subtraction}</p>
+        <p><strong>Multiplication:</strong> ${n1} × ${n2} = ${multiplication}</p>
+        <p><strong>Division:</strong> ${division}</p>
+      `;
+    }
+  </script>
+</body>
+</html>

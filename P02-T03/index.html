@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guess the Number Game</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>🌿 Guess the Number 🌿</h1>
+
+    <p>I'm thinking of a number between <strong>1 and 100</strong>. Can you guess it?</p>
+
+    <input type="number" id="guess" placeholder="Enter your guess" />
+    <button onclick="checkGuess()">Submit</button>
+
+    <div id="feedback"></div>
+    <div id="history"></div>
+  </div>
+
+  <script>
+    // Generate a random target number between 1 and 100
+    const target = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+    let gameOver = false;
+
+    function checkGuess() {
+      if (gameOver) return;
+
+      const guess = parseInt(document.getElementById("guess").value);
+      const feedback = document.getElementById("feedback");
+      const history = document.getElementById("history");
+
+      if (isNaN(guess)) {
+        feedback.innerHTML = "<p class='error'>⚠️ Please enter a valid number!</p>";
+        return;
+      }
+
+      attempts++;
+      if (guess < target) {
+        feedback.innerHTML = "<p class='low'>Too Low!</p>";
+      } else if (guess > target) {
+        feedback.innerHTML = "<p class='high'>Too High!</p>";
+      } else {
+        feedback.innerHTML = `<p class='correct'>🎉 Correct! You found it in ${attempts} attempts.</p>`;
+        gameOver = true;
+      }
+
+      // Show guess history
+      history.innerHTML += `<span>${guess}</span> `;
+      document.getElementById("guess").value = "";
+    }
+  </script>
+</body>
+</html>

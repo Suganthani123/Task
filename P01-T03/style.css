@@ -1,0 +1,84 @@
+/* Body styling with flower background */
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background: url('https://www.transparenttextures.com/patterns/flowers.png');
+  background-color: #fff0f6; /* soft pink */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Calculator box */
+.calculator {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 320px;
+  border: 3px solid #ff80bf;
+  background-image: linear-gradient(to top right, #ffe6f0, #ffffff);
+}
+
+/* Heading */
+h1 {
+  color: #cc0066;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* Labels and inputs */
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #660033;
+}
+
+input {
+  width: 90%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ff99cc;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 15px;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  background: #ff66b2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #e60073;
+}
+
+/* Result */
+#result {
+  margin-top: 20px;
+  font-size: 16px;
+  background: #fff0f6;
+  border: 2px dashed #ff80bf;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}

@@ -1,0 +1,87 @@
+/* Body */
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", sans-serif;
+  background: repeating-linear-gradient(
+    45deg,
+    #f9f9f9,
+    #f9f9f9 20px,
+    #e0e0e0 20px,
+    #e0e0e0 40px
+  ); /* rope/string effect */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.container {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+  width: 350px;
+  text-align: center;
+  border: 3px dashed #8b4513; /* rope-like border */
+}
+
+/* Heading */
+h1 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #8b4513;
+  text-decoration: underline wavy #deb887; /* string underline */
+}
+
+/* Label */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Input */
+input {
+  width: 90%;
+  padding: 10px;
+  border: 2px solid #deb887;
+  border-radius: 12px;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 15px;
+  outline: none;
+  background: #fffaf0;
+}
+
+/* Button */
+button {
+  padding: 10px 18px;
+  background: #8b4513;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: #a0522d;
+}
+
+/* Result */
+#result {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.output {
+  color: #2e8b57;
+  font-weight: bold;
+}
+
+.error {
+  color: #e74c3c;
+  font-weight: bold;
+}

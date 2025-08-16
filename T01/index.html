@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luck Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #ff7e5f;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #eb5e3f;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Luck Calculator</h1>
+        <p>Enter your name and find out how lucky you are today! 🍀</p>
+        <input type="text" id="name" placeholder="Enter your name">
+        <br>
+        <button onclick="calculateLuck()">Check Luck</button>
+        <div id="result"></div>
+       
+        <h2 id="result">result:</h2>
+        
+        
+    </div>
+
+    <script src="app.js">
+            function result(){
+           const input = document.getElementById("input").value;
+           const result = input.split(" ")
+
+           document.getElementById("output").innerText = "" + result
+        }
+
+    </script>
+</body>
+</html>

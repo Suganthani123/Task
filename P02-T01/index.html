@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Random Number (1–100)</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <main class="wrap">
+    <h1>Random Number</h1>
+
+    <div class="display" id="output" aria-live="polite" aria-atomic="true">
+      <!-- number appears here -->
+    </div>
+
+    <button id="btn" type="button">Generate</button>
+    <p class="hint">Range: 1–100 • Press <kbd>Space</kbd> to re-generate</p>
+  </main>
+
+  <script>
+    function rand1to100() {
+      return Math.floor(Math.random() * 100) + 1;
+    }
+
+    function render() {
+      const out = document.getElementById('output');
+      out.textContent = rand1to100();
+      out.classList.remove('pop');
+      // trigger re-animation
+      void out.offsetWidth;
+      out.classList.add('pop');
+    }
+
+    // generate on load
+    window.addEventListener('DOMContentLoaded', render);
+
+    // button click
+    document.getElementById('btn').addEventListener('click', render);
+
+    // keyboard shortcut: Space
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space') {
+        e.preventDefault();
+        render();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+/* Body styling */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card container */
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  width: 320px;
+  text-align: center;
+}
+
+/* Heading */
+h1 {
+  color: #d35400;
+  margin-bottom: 20px;
+}
+
+/* Input */
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 12px 0;
+  border: 2px solid #f39c12;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  text-align: center;
+}
+
+/* Button */
+button {
+  padding: 10px 20px;
+  background: #f39c12;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: #e67e22;
+}
+
+/* Result messages */
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.low { color: #2980b9; }       /* Blue */
+.high { color: #c0392b; }      /* Red */
+.correct { color: #27ae60; }   /* Green */
+.error { color: #8e44ad; }     /* Purple */

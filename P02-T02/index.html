@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>🔢 Guess the Number</h1>
+
+    <label for="userInput">Enter a number:</label>
+    <input type="number" id="userInput" placeholder="Enter your guess">
+
+    <button onclick="checkGuess()">Check</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    // Predefined number
+    const target = 50;
+
+    function checkGuess() {
+      const input = parseInt(document.getElementById("userInput").value);
+      const resultDiv = document.getElementById("result");
+
+      if (isNaN(input)) {
+        resultDiv.innerHTML = "<p class='error'>⚠️ Please enter a number!</p>";
+        return;
+      }
+
+      if (input < target) {
+        resultDiv.innerHTML = "<p class='low'>Too Low!</p>";
+      } else if (input > target) {
+        resultDiv.innerHTML = "<p class='high'>Too High!</p>";
+      } else {
+        resultDiv.innerHTML = "<p class='correct'>🎉 Correct! You guessed it.</p>";
+      }
+    }
+  </script>
+</body>
+</html>

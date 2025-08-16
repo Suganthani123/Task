@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remove Duplicates</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>👶 Remove Duplicates from Array</h1>
+
+    <label for="arrayInput">Enter numbers separated by commas:</label>
+    <input type="text" id="arrayInput" placeholder="e.g. 1,2,2,3,4,4,5">
+
+    <button onclick="removeDuplicates()">Clean Array</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function removeDuplicates() {
+      const input = document.getElementById("arrayInput").value.trim();
+      const resultDiv = document.getElementById("result");
+
+      if (!input) {
+        resultDiv.innerHTML = "<p class='error'>⚠️ Please enter an array!</p>";
+        return;
+      }
+
+      // Convert input string into numbers array
+      let arr = input.split(",").map(num => parseInt(num.trim())).filter(n => !isNaN(n));
+
+      if (arr.length === 0) {
+        resultDiv.innerHTML = "<p class='error'>⚠️ Invalid input! Enter numbers only.</p>";
+        return;
+      }
+
+      // Remove duplicates using Set
+      let uniqueArr = [...new Set(arr)];
+
+      resultDiv.innerHTML = `<p class="output">✅ Result: [${uniqueArr.join(", ")}]</p>`;
+    }
+  </script>
+</body>
+</html>
