@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 2 - Array Creation & Basic Operations</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+/* 🌿 Calm Green College Theme */
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #004d00, #228b22, #6bcb77);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f0fff0;
+}
+
+.container {
+  text-align: center;
+  background: rgba(0, 50, 0, 0.7);
+  padding: 40px;
+  border-radius: 20px;
+  width: 85%;
+  max-width: 700px;
+  box-shadow: 0 0 25px rgba(50, 205, 50, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #adff2f;
+  text-shadow: 0 0 10px #00ff00;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #e0ffe0;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+button {
+  background: linear-gradient(90deg, #32cd32, #00cc66);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 8px;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+
+button:hover {
+  transform: scale(1.07);
+  background: linear-gradient(90deg, #00cc66, #32cd32);
+  box-shadow: 0 0 20px rgba(0, 255, 128, 0.8);
+}
+
+.output-box {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 128, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+  color: #d4ffd4;
+  font-size: 0.95rem;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📚 Task 2: Array Creation & Basic Operations</h1>
+    <p>Click a button below to run Array examples.  
+      Open your <b>Console (F12 → Console tab)</b> to see the results.
+    </p>
+
+    <button onclick="numberArrayDemo()">Number Array Demo</button>
+    <button onclick="stringArrayDemo()">String Array Demo</button>
+
+    <div class="output-box">
+      <p>🖥️ Outputs will appear in your browser console.</p>
+    </div>
+  </div>
+
+  <script>
+    // Task 2: Array Creation and Basic Operations
+
+// Number Array Demo
+function numberArrayDemo() {
+  console.clear();
+  console.log("=== 🔢 Number Array Operations ===");
+
+  let numbers = [10, 20, 30, 40, 50];
+  console.log("Original Array:", numbers);
+
+  // Access elements
+  console.log("First Element:", numbers[0]);
+  console.log("Last Element:", numbers[numbers.length - 1]);
+
+  // Modify an element
+  numbers[2] = 35;
+  console.log("After Modification:", numbers);
+
+  // Array length
+  console.log("Array Length:", numbers.length);
+
+  // Add elements
+  numbers.push(60);
+  console.log("After push(60):", numbers);
+
+  // Remove last element
+  numbers.pop();
+  console.log("After pop():", numbers);
+
+  // Remove first element
+  numbers.shift();
+  console.log("After shift():", numbers);
+
+  // Add element to the beginning
+  numbers.unshift(5);
+  console.log("After unshift(5):", numbers);
+
+  console.log("=== ✅ End of Number Array Demo ===");
+}
+
+// String Array Demo
+function stringArrayDemo() {
+  console.clear();
+  console.log("=== 🔤 String Array Operations ===");
+
+  let fruits = ["Apple", "Banana", "Cherry"];
+  console.log("Original Array:", fruits);
+
+  // Access elements
+  console.log("First Fruit:", fruits[0]);
+  console.log("Second Fruit:", fruits[1]);
+
+  // Modify element
+  fruits[1] = "Mango";
+  console.log("After Modification:", fruits);
+
+  // Add new elements
+  fruits.push("Orange");
+  console.log("After push('Orange'):", fruits);
+
+  // Remove first fruit
+  fruits.shift();
+  console.log("After shift():", fruits);
+
+  // Add at beginning
+  fruits.unshift("Grapes");
+  console.log("After unshift('Grapes'):", fruits);
+
+  // Length of array
+  console.log("Array Length:", fruits.length);
+
+  console.log("=== ✅ End of String Array Demo ===");
+}
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 2 - Function Expressions & Arrow Functions</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+/* style.css — Technical Coding Terminal Theme 👨‍💻 */
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Source Code Pro', monospace;
+  background-color: #0d1117;
+  color: #00ff88;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #161b22;
+  border-radius: 15px;
+  padding: 40px 50px;
+  text-align: center;
+  width: 80%;
+  max-width: 700px;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+  border: 1px solid #00ff88;
+}
+
+h1 {
+  color: #00e676;
+  font-size: 1.8rem;
+  text-shadow: 0 0 10px #00ffcc;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #a6e3a1;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(90deg, #00ff88, #00ccff);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  color: #0d1117;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #00ccff, #00ff88);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.8);
+}
+
+.output-box {
+  background-color: #0b0f14;
+  border-radius: 10px;
+  margin-top: 25px;
+  padding: 20px;
+  text-align: left;
+  white-space: pre-wrap;
+  color: #7fffd4;
+  font-size: 1rem;
+  border: 1px solid #00ff88;
+  box-shadow: inset 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💻 Task 2: Function Expressions & Arrow Functions</h1>
+    <p>Click below to run and see function examples in action.</p>
+    <button onclick="runFunctionExamples()">Run Function Code</button>
+
+    <div id="output" class="output-box"></div>
+  </div>
+  <script>
+// script.js — Function Expressions & Arrow Functions 👨‍💻
+
+function runFunctionExamples() {
+  let output = "";
+
+  // 1️⃣ Traditional function declaration
+  function greet(name) {
+    return `Hello, ${name}!`;
+  }
+  output += "=== 1️⃣ Traditional Function Declaration ===\n";
+  output += greet("Suganthani") + "\n\n";
+
+  // 2️⃣ Function Expression
+  const greetExpression = function (name) {
+    return `Hi, ${name}! (from Function Expression)`;
+  };
+  output += "=== 2️⃣ Function Expression ===\n";
+  output += greetExpression("Indhirani") + "\n\n";
+
+  // 3️⃣ Arrow Function (ES6)
+  const greetArrow = (name) => `Hey, ${name}! (from Arrow Function)`;
+  output += "=== 3️⃣ Arrow Function ===\n";
+  output += greetArrow("Developer") + "\n\n";
+
+  // 4️⃣ Function to add numbers
+  const add = function (a, b) {
+    return a + b;
+  };
+  const addArrow = (a, b) => a + b;
+
+  output += "=== 4️⃣ Comparing Function Expression vs Arrow Function ===\n";
+  output += `Normal Function: add(5, 7) = ${add(5, 7)}\n`;
+  output += `Arrow Function: addArrow(5, 7) = ${addArrow(5, 7)}\n\n`;
+
+  // 5️⃣ Demonstrating "this" behavior
+  output += "=== 5️⃣ 'this' Behavior Difference ===\n";
+  const person = {
+    name: "Suganthani",
+    traditionalFunc: function () {
+      return `Traditional Function → Hello ${this.name}`;
+    },
+    arrowFunc: () => `Arrow Function → Hello ${this.name}`,
+  };
+
+  output += person.traditionalFunc() + "\n";
+  output += person.arrowFunc() + "\n\n";
+  output += "Note: Arrow functions do not bind their own 'this' keyword.\n\n";
+
+  // 6️⃣ Arrow function use case - single line
+  const square = (n) => n * n;
+  const double = (n) => n * 2;
+  output += "=== 6️⃣ Simple Arrow Function Examples ===\n";
+  output += `Square of 6 = ${square(6)}\n`;
+  output += `Double of 8 = ${double(8)}\n\n`;
+
+  // 7️⃣ Multi-line Arrow Function Example
+  const getUserInfo = (name, age) => {
+    return `User: ${name}, Age: ${age}`;
+  };
+  output += "=== 7️⃣ Multi-line Arrow Function ===\n";
+  output += getUserInfo("Suganthani", 21) + "\n\n";
+
+  output += "✅ Function Expression & Arrow Function Demo Complete!";
+  document.getElementById("output").innerText = output;
+}
+
+  </script>
+</body>
+</html>

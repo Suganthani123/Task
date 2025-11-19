@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1 - Math & String Functions</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* College style theme: bright blue + yellow 💙💛 */
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #001f54, #004aad, #007bff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff8dc;
+}
+
+.container {
+  text-align: center;
+  background: rgba(0, 0, 30, 0.7);
+  padding: 40px;
+  border-radius: 20px;
+  width: 85%;
+  max-width: 700px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  border: 2px solid rgba(255, 255, 0, 0.4);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #ffeb3b;
+  text-shadow: 0 0 10px #ffee58;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #e8f7ff;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(90deg, #ffeb3b, #ffcc00);
+  color: #001f3f;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #fff176, #ffeb3b);
+  transform: scale(1.07);
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
+}
+
+.output-box {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 0, 0.3);
+  border-radius: 10px;
+  padding: 15px;
+  color: #fffde7;
+  font-size: 0.95rem;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🏫 Task 1: Math & String Built-in Functions</h1>
+    <p>Click below to run the Math and String function demonstrations.<br>
+    View all results in your browser <b>console</b> (Press <b>F12 → Console</b>).</p>
+
+    <button onclick="runMathDemo()">Run Math Functions</button>
+    <button onclick="runStringDemo()">Run String Functions</button>
+
+    <div class="output-box">
+      <p>💡 Outputs will appear in your console window.</p>
+    </div>
+  </div>
+
+<script>
+    // Task 1: Math & String Built-in Functions
+
+// 🔢 Math Functions
+function runMathDemo() {
+  console.clear();
+  console.log("=== 🔢 MATH FUNCTIONS DEMO ===");
+
+  let num = 7.56;
+
+  console.log("Number:", num);
+  console.log("Math.round() =", Math.round(num));  // Nearest integer
+  console.log("Math.floor() =", Math.floor(num));  // Round down
+  console.log("Math.ceil() =", Math.ceil(num));    // Round up
+  console.log("Math.sqrt(25) =", Math.sqrt(25));   // Square root
+  console.log("Math.pow(3, 4) =", Math.pow(3, 4)); // Exponentiation
+  console.log("Math.abs(-15) =", Math.abs(-15));   // Absolute value
+
+  console.log("\nRandom number between 0 and 1 =", Math.random());
+  console.log("Random number (1–100) =", Math.floor(Math.random() * 100) + 1);
+
+  let numbers = [12, 45, 7, 89, 23, 56];
+  console.log("\nNumbers:", numbers);
+  console.log("Min value =", Math.min(...numbers));
+  console.log("Max value =", Math.max(...numbers));
+  console.log("=== End of Math Demo ===");
+}
+
+// 🔤 String Functions
+function runStringDemo() {
+  console.clear();
+  console.log("=== 🔤 STRING FUNCTIONS DEMO ===");
+
+  let text = "JavaScript is Amazing!";
+  console.log("Original text:", text);
+
+  // Changing case
+  console.log("Uppercase:", text.toUpperCase());
+  console.log("Lowercase:", text.toLowerCase());
+
+  // Substring extraction
+  console.log("Substring (0,10):", text.substring(0, 10));
+  console.log("Slice (11, text.length):", text.slice(11));
+
+  // Check inclusion
+  console.log("Includes 'Script'?", text.includes("Script"));
+  console.log("Includes 'Python'?", text.includes("Python"));
+
+  // Replace text
+  console.log("Replace 'Amazing' with 'Powerful':", text.replace("Amazing", "Powerful"));
+
+  // Trim & Split
+  let messy = "   Hello College Students!   ";
+  console.log("\nBefore trim:", messy);
+  console.log("After trim:", messy.trim());
+  console.log("Split words:", text.split(" "));
+
+  console.log("=== End of String Demo ===");
+}
+
+</script>
+</body>
+</html>

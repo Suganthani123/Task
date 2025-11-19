@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3 - Callback Functions & Scopes</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+/* style.css — Cool Blue Technical Theme 🔵 */
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #001f3f, #0074D9, #00aaff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f0faff;
+}
+
+.container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 700px;
+  box-shadow: 0 0 30px rgba(0, 200, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #00eaff;
+  text-shadow: 0 0 10px #00ffff;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #cdefff;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+button {
+  background: linear-gradient(90deg, #0074D9, #00aaff);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+button:hover {
+  transform: scale(1.08);
+  background: linear-gradient(90deg, #00aaff, #0074D9);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.7);
+}
+
+.output-box {
+  margin-top: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  color: #9fe8ff;
+  box-shadow: inset 0 0 10px rgba(0, 200, 255, 0.3);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔁 Task 3: Callback Functions & Scopes</h1>
+    <p>Click below to run the callback demo and observe variable scopes in the console.</p>
+    <button onclick="runCallbackDemo()">Run Callback Demo</button>
+    <button onclick="checkScopes()">Check Scope Differences</button>
+
+    <div class="output-box">
+      <p>🖥️ View all outputs in your browser console (Press <b>F12 → Console</b>).</p>
+    </div>
+  </div>
+
+  <script>
+    // Task 3: Callback Functions & Scopes Demo 🔁
+
+// 1️⃣ Function that accepts another function as a callback
+function performAction(action, callback) {
+  console.log("⏳ Performing action:", action);
+  
+  setTimeout(() => {
+    console.log(`✅ Action "${action}" completed.`);
+    callback(); // calling the callback function
+  }, 1500);
+}
+
+// 2️⃣ Callback function
+function afterAction() {
+  console.log("💡 Callback executed after the main action!");
+}
+
+// Function to run callback example
+function runCallbackDemo() {
+  console.clear();
+  console.log("=== 🔁 CALLBACK FUNCTION DEMO ===");
+  performAction("Data Processing", afterAction);
+}
+
+// 3️⃣ Scope Demonstration
+let globalVar = "🌍 Global Scope Variable (declared with let)";
+
+function checkScopes() {
+  console.clear();
+  console.log("=== 🧠 SCOPE DEMONSTRATION ===");
+  
+  console.log(globalVar);
+
+  function localScopeDemo() {
+    var localVar = "📦 Local Scope Variable (var)";
+    let blockLet = "🔒 Block Scoped (let)";
+    const constBlock = "🧱 Block Scoped Constant (const)";
+
+    console.log(localVar);
+    console.log(blockLet);
+    console.log(constBlock);
+
+    if (true) {
+      var testVar = "✅ var is function-scoped (visible outside block)";
+      let testLet = "🚫 let is block-scoped (only inside this block)";
+      const testConst = "🚫 const is block-scoped too";
+      console.log(testVar);
+      console.log(testLet);
+      console.log(testConst);
+    }
+
+    console.log(testVar); // Accessible
+    // console.log(testLet); // ❌ Would throw error
+    // console.log(testConst); // ❌ Would throw error
+  }
+
+  localScopeDemo();
+
+  // Trying to access local variable outside the function
+  try {
+    console.log(localVar); // ❌ Error
+  } catch (error) {
+    console.log("⚠️ Cannot access localVar outside its function.");
+  }
+
+  console.log("=== 🧩 Scope demonstration complete ===");
+}
+
+  </script>
+</body>
+</html>

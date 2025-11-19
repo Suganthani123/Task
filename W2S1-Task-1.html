@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 1 - Defining and Calling Functions</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+/* style.css — Futuristic Technical Style ⚙️ */
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Roboto Mono', monospace;
+  background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+  color: #d4f1f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: rgba(20, 30, 40, 0.85);
+  border-radius: 20px;
+  padding: 40px 50px;
+  text-align: center;
+  width: 80%;
+  max-width: 700px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #00eaff;
+  text-shadow: 0 0 15px #00ffff;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #d4f1f9;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(90deg, #00eaff, #0077b6);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #0077b6, #00eaff);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+}
+
+.output-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  margin-top: 25px;
+  padding: 20px;
+  text-align: left;
+  white-space: pre-wrap;
+  color: #a8dadc;
+  font-size: 1rem;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>⚙️ Task 1: Defining & Calling Functions</h1>
+    <p>Click the button below to run the JavaScript functions and check output below 👇</p>
+    <button onclick="runFunctions()">Run Function Examples</button>
+    <div id="output" class="output-box"></div>
+  </div>
+  <script>
+// script.js — Defining and Calling Functions ⚙️
+
+function runFunctions() {
+  let output = "";
+
+  // 1️⃣ Simple function with no parameters
+  function greet() {
+    return "Hello! Welcome to JavaScript Functions 🚀";
+  }
+  output += "=== 1️⃣ Simple Function ===\n";
+  output += greet() + "\n\n";
+
+  // 2️⃣ Function with fixed parameters
+  function addNumbers(a, b) {
+    return a + b;
+  }
+  output += "=== 2️⃣ Function with Fixed Parameters ===\n";
+  output += `addNumbers(5, 10) = ${addNumbers(5, 10)}\n\n`;
+
+  // 3️⃣ Function with multiple parameters
+  function introduce(name, age, country) {
+    return `Hi, I'm ${name}, ${age} years old, from ${country}.`;
+  }
+  output += "=== 3️⃣ Function with Multiple Parameters ===\n";
+  output += introduce("Suganthani", 21, "India") + "\n\n";
+
+  // 4️⃣ Function using the 'arguments' object
+  function sumUsingArguments() {
+    let total = 0;
+    for (let i = 0; i < arguments.length; i++) {
+      total += arguments[i];
+    }
+    return total;
+  }
+  output += "=== 4️⃣ Function Using arguments Object ===\n";
+  output += `sumUsingArguments(1, 2, 3, 4, 5) = ${sumUsingArguments(1, 2, 3, 4, 5)}\n\n`;
+
+  // 5️⃣ Function using the REST operator (...)
+  function sumUsingRest(...nums) {
+    return nums.reduce((acc, curr) => acc + curr, 0);
+  }
+  output += "=== 5️⃣ Function Using REST Operator (...) ===\n";
+  output += `sumUsingRest(10, 20, 30, 40) = ${sumUsingRest(10, 20, 30, 40)}\n\n`;
+
+  // 6️⃣ Function call inside another function
+  function double(num) {
+    return num * 2;
+  }
+
+  function processValue(val) {
+    return `Double of ${val} is ${double(val)}`;
+  }
+
+  output += "=== 6️⃣ Nested Function Calls ===\n";
+  output += processValue(15) + "\n\n";
+
+  output += "✅ All functions executed successfully!";
+
+  document.getElementById("output").innerText = output;
+}
+
+  </script>
+</body>
+</html>

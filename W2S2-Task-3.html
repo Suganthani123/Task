@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3 - Array Iteration and Loops</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+/* 💜 Blue-Purple Tech Style for College Projects */
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #240046, #3c096c, #5a189a, #7b2cbf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f8f9ff;
+}
+
+.container {
+  text-align: center;
+  background: rgba(20, 10, 40, 0.8);
+  padding: 40px;
+  border-radius: 20px;
+  width: 85%;
+  max-width: 700px;
+  box-shadow: 0 0 25px rgba(155, 100, 255, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #d0bfff;
+  text-shadow: 0 0 10px #b197fc;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #e9e4ff;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(90deg, #9d4edd, #7b2cbf);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.07);
+  background: linear-gradient(90deg, #c77dff, #9d4edd);
+  box-shadow: 0 0 20px rgba(200, 150, 255, 0.7);
+}
+
+.output-box {
+  margin-top: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 15px;
+  color: #f3e8ff;
+  font-size: 0.95rem;
+  box-shadow: inset 0 0 10px rgba(155, 100, 255, 0.3);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💻 Task 3: Array Iteration and Loops</h1>
+    <p>Click the button below to see different array iteration methods in action.<br>
+    Open your <b>Console</b> (<b>F12 → Console tab</b>) to view results.</p>
+
+    <button onclick="runArrayLoops()">Run Iteration Demo</button>
+
+    <div class="output-box">
+      <p>📊 Results will appear in the console.</p>
+    </div>
+  </div>
+
+  <script>
+    // Task 3: Array Iteration and Loops
+
+function runArrayLoops() {
+  console.clear();
+  console.log("=== 💻 ARRAY ITERATION & LOOPS DEMO ===");
+
+  const numbers = [2, 4, 6, 8, 10];
+  console.log("Original Array:", numbers);
+
+  // 1️⃣ forEach() - executes a function for each element
+  console.log("\n🔹 Using forEach():");
+  numbers.forEach((num, index) => {
+    console.log(`Index ${index} → Value: ${num}`);
+  });
+
+  // 2️⃣ map() - creates a new array by applying a transformation
+  console.log("\n🔹 Using map() to square each number:");
+  const squares = numbers.map(num => num * num);
+  console.log("Squares Array:", squares);
+
+  // 3️⃣ for...in - loops over indexes (keys)
+  console.log("\n🔹 Using for...in (indexes):");
+  for (let index in numbers) {
+    console.log(`Index ${index} → Value: ${numbers[index]}`);
+  }
+
+  // 4️⃣ for...of - loops directly over values
+  console.log("\n🔹 Using for...of (values):");
+  for (let value of numbers) {
+    console.log(`Value: ${value}`);
+  }
+
+  // Comparison Summary
+  console.log("\n=== 🧩 Comparison Summary ===");
+  console.log("forEach(): Executes callback for each element (no return).");
+  console.log("map(): Returns a NEW array with transformed values.");
+  console.log("for...in: Loops over INDEXES (keys).");
+  console.log("for...of: Loops over VALUES directly.");
+  console.log("=== ✅ End of Demo ===");
+}
+
+  </script>
+</body>
+</html>
