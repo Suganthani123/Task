@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 2 - Complex Data & Parameter Handling</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+/* 🌸 Elegant Pastel Style for Task 2 */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ffe1f0, #fff0f5, #ffe5ec);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #5a2a5a;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 25px;
+  width: 85%;
+  max-width: 700px;
+  box-shadow: 0 0 25px rgba(255, 182, 193, 0.6);
+  border: 2px solid rgba(255, 182, 193, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #b5179e;
+  text-shadow: 0 0 6px #fbb1bd;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #590d22;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+button {
+  background: linear-gradient(90deg, #ff7aa2, #ffb6c1);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.07);
+  background: linear-gradient(90deg, #ff9eb5, #ffc8dd);
+  box-shadow: 0 0 20px rgba(255, 150, 180, 0.6);
+}
+
+.output-box {
+  margin-top: 25px;
+  background: rgba(255, 240, 245, 0.8);
+  border: 1px solid rgba(255, 192, 203, 0.5);
+  border-radius: 12px;
+  padding: 15px;
+  color: #6a0572;
+  font-size: 0.95rem;
+  box-shadow: inset 0 0 8px rgba(255, 192, 203, 0.3);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌸 Task 2: Complex Data & Parameter Handling</h1>
+    <p>Click the button below and open the <b>Console</b> (F12 → Console tab) to view detailed results.</p>
+
+    <button onclick="runComplexDataDemo()">Run JavaScript Demo</button>
+
+    <div class="output-box">
+      <p>💬 Check your browser console for output logs of arrays, objects, spreads, and parameters!</p>
+    </div>
+  </div>
+
+  <script>
+    // Task 2: Complex Data & Parameter Handling
+
+function runComplexDataDemo() {
+  console.clear();
+  console.log("=== 🌷 Complex Data & Parameter Handling ===");
+
+  // 1️⃣ Array of Objects (Nested Data)
+  const users = [
+    {
+      id: 1,
+      name: "Aaradhya",
+      age: 22,
+      contact: { email: "aaradhya@example.com", city: "Chennai" }
+    },
+    {
+      id: 2,
+      name: "Diya",
+      age: 25,
+      contact: { email: "diya@example.com", city: "Mumbai" }
+    },
+    {
+      id: 3,
+      name: "Meera",
+      age: 23,
+      contact: { email: "meera@example.com", city: "Bangalore" }
+    }
+  ];
+
+  console.log("👩‍💻 Array of Users:");
+  console.table(users);
+
+  // Accessing nested data
+  console.log("📍 Access Nested Data:");
+  console.log("First user's city:", users[0].contact.city);
+  console.log("Second user's email:", users[1].contact.email);
+
+  // 2️⃣ Rest Parameters Example
+  function calculateTotal(...prices) {
+    return prices.reduce((total, price) => total + price, 0);
+  }
+  const total = calculateTotal(200, 300, 150, 50);
+  console.log("\n💰 Using Rest Parameters:");
+  console.log("Total Price:", total);
+
+  // 3️⃣ Spread Operator Example (Combine & Clone)
+  const fruits = ["Mango", "Apple", "Banana"];
+  const moreFruits = ["Grapes", "Peach"];
+  const allFruits = [...fruits, ...moreFruits];
+  console.log("\n🍓 Using Spread Operator (Arrays):");
+  console.log("All Fruits:", allFruits);
+
+  const originalUser = { name: "Aaradhya", age: 22 };
+  const clonedUser = { ...originalUser, city: "Chennai" };
+  console.log("\n👭 Spread Operator (Objects):");
+  console.log("Original:", originalUser);
+  console.log("Cloned + Added:", clonedUser);
+
+  // 4️⃣ Function Parameter Destructuring
+  function displayUser({ name, age, contact: { city } }) {
+    console.log(`\n👑 User Details → Name: ${name}, Age: ${age}, City: ${city}`);
+  }
+
+  displayUser(users[2]); // Passing one of the objects
+
+  console.log("\n=== ✅ End of Complex Data Demo ===");
+}
+
+  </script>
+</body>
+</html>

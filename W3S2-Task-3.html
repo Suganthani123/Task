@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3 - Function Context & Advanced Calls</title>
+  <link rel="stylesheet" href="sugu-style.css">
+  <style>
+/* 🌟 Sugu Style – Elegant Violet & Tech Glow Theme */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #b388eb, #f7aef8, #e0bbe4);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2e003e;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  padding: 40px 50px;
+  width: 85%;
+  max-width: 700px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(183, 148, 244, 0.8);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #4a148c;
+  text-shadow: 0 0 10px #d8b4ef;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #2e003e;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(90deg, #c77dff, #9d4edd, #7b2cbf);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #a855f7, #c77dff);
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(180, 121, 255, 0.7);
+}
+
+.output-box {
+  margin-top: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 15px;
+  padding: 15px;
+  color: #4a148c;
+  font-size: 0.95rem;
+  box-shadow: inset 0 0 10px rgba(180, 121, 255, 0.3);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌟 Task 3: Function Context & Advanced Calls</h1>
+    <p>Click below and check the <b>Console</b> (F12 → Console tab) to see call(), apply(), and bind() in action!</p>
+    <button onclick="runFunctionContextDemo()">Run Demo</button>
+    <div class="output-box">
+      <p>📘 This demo shows <b>call()</b>, <b>apply()</b>, and <b>bind()</b> methods with different contexts.</p>
+    </div>
+  </div>
+
+  <script>
+    // 🌟 Task 3: Function Context & Advanced Calls
+
+function runFunctionContextDemo() {
+  console.clear();
+  console.log("=== 🌸 Function Context & Advanced Calls Demo ===");
+
+  // Define an object
+  const person1 = {
+    name: "Suganthani",
+    role: "Developer",
+  };
+
+  const person2 = {
+    name: "Indhirani",
+    role: "Designer",
+  };
+
+  // Regular function to greet
+  function greet(greeting, year) {
+    console.log(`${greeting}, I am ${this.name}, working as a ${this.role} in ${year}.`);
+  }
+
+  console.log("\n🔹 Using call():");
+  // call(context, arg1, arg2, ...)
+  greet.call(person1, "Hello", 2025);
+  greet.call(person2, "Hi", 2025);
+
+  console.log("\n🔹 Using apply():");
+  // apply(context, [arg1, arg2, ...])
+  greet.apply(person1, ["Welcome", 2026]);
+  greet.apply(person2, ["Hey there", 2026]);
+
+  console.log("\n🔹 Using bind():");
+  // bind(context) → returns a new function permanently bound to the context
+  const boundGreet1 = greet.bind(person1, "Good Morning", 2027);
+  const boundGreet2 = greet.bind(person2, "Good Evening", 2027);
+
+  // Call the bound functions
+  boundGreet1();
+  boundGreet2();
+
+  console.log("\n🔹 Comparing call(), apply(), and bind():");
+  console.log(`
+  call()  → Invokes immediately and takes arguments separately.
+  apply() → Invokes immediately but takes arguments as an array.
+  bind()  → Does NOT invoke immediately; returns a new function with bound context.
+  `);
+
+  console.log("=== ✅ End of Function Context Demo ===");
+}
+
+  </script>
+</body>
+</html>

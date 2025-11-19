@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 3 - Object Destructuring and Spread</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+/* 🌿 Independent Theme: Confident, Calm, and Modern */
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #006d77, #83c5be, #edf6f9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #073b4c;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 20px;
+  width: 85%;
+  max-width: 700px;
+  box-shadow: 0 0 25px rgba(0, 128, 128, 0.4);
+  border: 2px solid rgba(0, 128, 128, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #004b5a;
+  text-shadow: 0 0 8px #83c5be;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #023047;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(90deg, #118ab2, #06d6a0);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.07);
+  background: linear-gradient(90deg, #06d6a0, #118ab2);
+  box-shadow: 0 0 20px rgba(0, 200, 180, 0.7);
+}
+
+.output-box {
+  margin-top: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 150, 100, 0.2);
+  border-radius: 10px;
+  padding: 15px;
+  color: #073b4c;
+  font-size: 0.95rem;
+  box-shadow: inset 0 0 10px rgba(0, 100, 100, 0.3);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌿 Task 3: Object Destructuring & Spread Operator</h1>
+    <p>Click the button below and check the <b>Console</b> (F12 → Console Tab) to see outputs.</p>
+
+    <button onclick="runDestructuringDemo()">Run Demo</button>
+
+    <div class="output-box">
+      <p>💡 Outputs are printed in your browser console.</p>
+    </div>
+  </div>
+
+  <script>
+    // Task 3: Object Destructuring and Spread
+
+function runDestructuringDemo() {
+  console.clear();
+  console.log("=== 🌿 Object Destructuring & Spread Demo ===");
+
+  // 1️⃣ Basic Object
+  const student = {
+    name: "Suganthani",
+    age: 21,
+    course: "Computer Science",
+    marks: { math: 95, english: 88 }
+  };
+
+  // Destructuring basic properties
+  const { name, age, course } = student;
+  console.log("🧑‍🎓 Basic Destructuring:");
+  console.log("Name:", name);
+  console.log("Age:", age);
+  console.log("Course:", course);
+
+  // 2️⃣ Default values
+  const { grade = "A+" } = student; // default value if not present
+  console.log("\n⭐ Destructuring with Default Value:");
+  console.log("Grade:", grade);
+
+  // 3️⃣ Nested destructuring
+  const {
+    marks: { math, english }
+  } = student;
+  console.log("\n📘 Nested Destructuring:");
+  console.log("Math Marks:", math);
+  console.log("English Marks:", english);
+
+  // 4️⃣ Spread Operator - Clone object
+  const clonedStudent = { ...student };
+  console.log("\n🌀 Spread → Cloned Student:", clonedStudent);
+
+  // Modify clone to show independence
+  clonedStudent.name = "Indhirani";
+  console.log("Modified Clone Name:", clonedStudent.name);
+  console.log("Original Name Unchanged:", student.name);
+
+  // 5️⃣ Spread Operator - Merge objects
+  const additionalInfo = { college: "ABC College", year: "Final Year" };
+  const mergedStudent = { ...student, ...additionalInfo };
+  console.log("\n🧩 Spread → Merged Object:", mergedStudent);
+
+  console.log("\n=== ✅ End of Demo ===");
+}
+
+  </script>
+</body>
+</html>

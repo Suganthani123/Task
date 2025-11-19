@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1 - Destructuring, Notation & Iteration</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+/* 💖 Elegant Women-Inspired Theme: Soft, Confident, and Graceful */
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ffb6c1, #ffe5ec, #fff0f5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5a2a5a;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 45px;
+  border-radius: 25px;
+  width: 85%;
+  max-width: 700px;
+  box-shadow: 0 0 30px rgba(255, 182, 193, 0.6);
+  border: 2px solid rgba(255, 182, 193, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #b5179e;
+  text-shadow: 0 0 8px #fbb1bd;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+p {
+  font-size: 1rem;
+  color: #590d22;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+button {
+  background: linear-gradient(90deg, #ff7aa2, #ffb6c1);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.07);
+  background: linear-gradient(90deg, #ff9eb5, #ffc8dd);
+  box-shadow: 0 0 25px rgba(255, 150, 180, 0.6);
+}
+
+.output-box {
+  margin-top: 25px;
+  background: rgba(255, 240, 245, 0.7);
+  border: 1px solid rgba(255, 192, 203, 0.5);
+  border-radius: 12px;
+  padding: 15px;
+  color: #6a0572;
+  font-size: 0.95rem;
+  box-shadow: inset 0 0 10px rgba(255, 192, 203, 0.3);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌸 Task 1: Destructuring, Notation & Iteration</h1>
+    <p>Click the button below and open the <b>Console</b> (F12 → Console Tab) to view outputs.</p>
+
+    <button onclick="runDestructuringNotationIteration()">Run Demo</button>
+
+    <div class="output-box">
+      <p>💬 All examples are logged inside your browser console.</p>
+    </div>
+  </div>
+
+  <script>
+    // Task 1: Destructuring, Notation & Iteration
+
+function runDestructuringNotationIteration() {
+  console.clear();
+  console.log("=== 🌸 Destructuring, Notation & Iteration Demo ===");
+
+  // 1️⃣ Array Destructuring
+  const colors = ["Pink", "Lavender", "Peach", "Mint"];
+  const [primary, secondary, , accent] = colors;
+  console.log("🎨 Array Destructuring:");
+  console.log("Primary:", primary);
+  console.log("Secondary:", secondary);
+  console.log("Accent:", accent);
+
+  // 2️⃣ Object Destructuring
+  const woman = {
+    name: "Suganthani",
+    age: 25,
+    profession: "Software Engineer",
+    skills: { coding: "JavaScript", design: "Figma" }
+  };
+
+  const { name, age, profession } = woman;
+  console.log("\n👩‍💻 Object Destructuring:");
+  console.log("Name:", name);
+  console.log("Age:", age);
+  console.log("Profession:", profession);
+
+  // 3️⃣ Nested Destructuring
+  const {
+    skills: { coding, design }
+  } = woman;
+  console.log("\n💅 Nested Destructuring:");
+  console.log("Coding Skill:", coding);
+  console.log("Design Skill:", design);
+
+  // 4️⃣ Dot & Bracket Notation
+  console.log("\n💎 Dot & Bracket Notation:");
+  console.log("Using Dot →", woman.profession);
+  console.log("Using Bracket →", woman["age"]);
+
+  // 5️⃣ Iterating Object using for...in
+  console.log("\n🔁 Iteration using for...in:");
+  for (let key in woman) {
+    console.log(`${key}: ${woman[key]}`);
+  }
+
+  // 6️⃣ Iterating using Object.keys()
+  console.log("\n🔹 Object.keys():");
+  Object.keys(woman).forEach(key => {
+    console.log(`${key} → ${woman[key]}`);
+  });
+
+  // 7️⃣ Iterating using Object.values()
+  console.log("\n🔹 Object.values():");
+  Object.values(woman).forEach(value => {
+    console.log("Value:", value);
+  });
+
+  // 8️⃣ Iterating using Object.entries()
+  console.log("\n🔹 Object.entries():");
+  Object.entries(woman).forEach(([key, value]) => {
+    console.log(`${key}: ${value}`);
+  });
+
+  console.log("\n=== ✅ End of Demo ===");
+}
+
+  </script>
+</body>
+</html>

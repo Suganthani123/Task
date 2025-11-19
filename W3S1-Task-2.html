@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task 2 - Working with Objects and Methods</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+/* 🌤️ Soft Professional Sky-Blue Theme */
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #a2d9ff, #c1e9ff, #eaf6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #003049;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 20px;
+  width: 85%;
+  max-width: 700px;
+  box-shadow: 0 0 20px rgba(0, 150, 200, 0.3);
+  border: 2px solid rgba(0, 100, 150, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #0077b6;
+  text-shadow: 0 0 10px #90e0ef;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #023047;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(90deg, #0077b6, #00b4d8);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.07);
+  background: linear-gradient(90deg, #48cae4, #00b4d8);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.7);
+}
+
+.output-box {
+  margin-top: 25px;
+  background: rgba(0, 150, 255, 0.05);
+  border: 1px solid rgba(0, 100, 255, 0.2);
+  border-radius: 10px;
+  padding: 15px;
+  color: #023047;
+  font-size: 0.95rem;
+  box-shadow: inset 0 0 10px rgba(0, 150, 255, 0.2);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🏫 Task 2: Working with Objects and Methods</h1>
+    <p>Click the button below to run the object demo and open the <b>Console</b> to view results.</p>
+
+    <button onclick="runObjectDemo()">Run Object Demo</button>
+
+    <div class="output-box">
+      <p>📜 Object details and method results will appear in your browser console.</p>
+    </div>
+  </div>
+
+<script>
+    // Task 2: Working with Objects and Methods
+
+function runObjectDemo() {
+  console.clear();
+  console.log("=== 🏫 Working with Objects and Methods ===");
+
+  // 1️⃣ Create a basic object
+  const student = {
+    name: "Suganthani",
+    age: 21,
+    course: "Computer Science",
+    marks: { math: 90, science: 85, english: 88 },
+
+    // Method inside object
+    displayInfo: function() {
+      console.log(`👩‍🎓 Student Info:
+      Name: ${this.name}
+      Age: ${this.age}
+      Course: ${this.course}`);
+    },
+
+    // Method to calculate average marks
+    calculateAverage: function() {
+      const total = this.marks.math + this.marks.science + this.marks.english;
+      const avg = total / 3;
+      console.log(`📊 Average Marks: ${avg.toFixed(2)}`);
+    }
+  };
+
+  // 2️⃣ Access object properties
+  console.log("🔹 Name:", student.name);
+  console.log("🔹 Age:", student.age);
+  console.log("🔹 Course:", student.course);
+  console.log("🔹 Marks:", student.marks);
+
+  // 3️⃣ Call object methods
+  student.displayInfo();
+  student.calculateAverage();
+
+  // 4️⃣ Modify object properties
+  student.age = 22;
+  student.marks.math = 95;
+  console.log("\n✏️ Updated Age and Marks:");
+  student.displayInfo();
+  student.calculateAverage();
+
+  // 5️⃣ Add new property dynamically
+  student.grade = "A+";
+  console.log("✨ New Property Added → Grade:", student.grade);
+
+  // 6️⃣ Add new method dynamically
+  student.showSummary = function() {
+    console.log(`Summary: ${this.name} is enrolled in ${this.course} and has grade ${this.grade}.`);
+  };
+  student.showSummary();
+
+  console.log("=== ✅ End of Object Demo ===");
+}
+
+</script>
+</body>
+</html>
