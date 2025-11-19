@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1 - Conditional Statements in JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+/* style.css - Modern Gradient Glass Effect */
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 40px 50px;
+  border-radius: 25px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  text-align: center;
+  width: 80%;
+  max-width: 700px;
+  backdrop-filter: blur(12px);
+}
+
+h1 {
+  font-size: 2rem;
+  color: #ffebf0;
+  text-shadow: 0 0 10px #00ffff;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #e52e71, #ff8a00);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.output-box {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 25px;
+  text-align: left;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 1rem;
+  color: #fff8dc;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌈 Task 1: Conditional Statements Practice 🌈</h1>
+    <p>Click the button below to test different types of conditional statements.</p>
+    <button onclick="runConditions()">Run Conditional Programs</button>
+
+    <div id="output" class="output-box"></div>
+  </div>
+
+  <script>
+// script.js - Task 1: Conditional Statements Practice
+
+function runConditions() {
+  let output = "";
+
+  // 🌼 Simple if statement
+  let age = 20;
+  output += "=== Simple if Statement ===\n";
+  if (age >= 18) {
+    output += `Age = ${age} → You are eligible to vote.\n`;
+  }
+  output += "\n";
+
+  // 🌼 if-else block
+  output += "=== if-else Statement ===\n";
+  let num = -5;
+  if (num >= 0) {
+    output += `${num} is Positive.\n`;
+  } else {
+    output += `${num} is Negative.\n`;
+  }
+  output += "\n";
+
+  // 🌼 Multiple conditions with else-if
+  output += "=== else-if Ladder ===\n";
+  let marks = 82;
+  if (marks >= 90) {
+    output += `Marks = ${marks} → Grade: A+\n`;
+  } else if (marks >= 75) {
+    output += `Marks = ${marks} → Grade: A\n`;
+  } else if (marks >= 60) {
+    output += `Marks = ${marks} → Grade: B\n`;
+  } else if (marks >= 40) {
+    output += `Marks = ${marks} → Grade: C\n`;
+  } else {
+    output += `Marks = ${marks} → Fail\n`;
+  }
+  output += "\n";
+
+  // 🌼 Switch Statement (Menu Simulation)
+  output += "=== Switch Statement (Day of the Week) ===\n";
+  let dayNumber = 3; // Try changing to 1–7 to test
+  switch (dayNumber) {
+    case 1: output += "1 → Monday\n"; break;
+    case 2: output += "2 → Tuesday\n"; break;
+    case 3: output += "3 → Wednesday\n"; break;
+    case 4: output += "4 → Thursday\n"; break;
+    case 5: output += "5 → Friday\n"; break;
+    case 6: output += "6 → Saturday\n"; break;
+    case 7: output += "7 → Sunday\n"; break;
+    default: output += "Invalid day number! Please enter 1–7.\n";
+  }
+
+  output += "\n=== Edge Case Testing ===\n";
+  let testValue = 0;
+  if (testValue) {
+    output += "Truthy value\n";
+  } else {
+    output += "Falsy value (0 is false in JS)\n";
+  }
+
+  document.getElementById("output").innerText = output;
+}
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 2 - Loop Control Practice</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+/* style.css - Nature Theme 🌿 */
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #a8e063, #56ab2f);
+  color: #2f3e46;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 40px 50px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  width: 80%;
+  max-width: 700px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #1b4332;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px #95d5b2;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #081c15;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(90deg, #2d6a4f, #40916c);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #52b788, #2d6a4f);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.output-box {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  margin-top: 25px;
+  padding: 20px;
+  text-align: left;
+  font-family: monospace;
+  white-space: pre-wrap;
+  color: #081c15;
+  font-size: 1rem;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🍃 Task 2: Loop Control Practice</h1>
+    <p>Click the button to run JavaScript loops and view outputs below.</p>
+    <button onclick="runLoops()">Run Loop Programs</button>
+
+    <div id="output" class="output-box"></div>
+  </div>
+
+  <script>
+// script.js - Task 2: Loop Control Practice 🌿
+
+function runLoops() {
+  let output = "";
+
+  // 🌱 while loop: print numbers 1 to 10
+  output += "=== 🌱 while Loop (1 to 10) ===\n";
+  let i = 1;
+  while (i <= 10) {
+    output += i + " ";
+    i++;
+  }
+  output += "\n\n";
+
+  // 🌾 do-while loop: simulate user prompt until correct input
+  output += "=== 🌾 do-while Loop (Simulated Input) ===\n";
+  let correctAnswer = 7;
+  let userGuess = 5; // (you can simulate different guesses)
+  do {
+    output += `User guessed: ${userGuess}\n`;
+    if (userGuess !== correctAnswer) {
+      output += "❌ Wrong guess! Try again...\n";
+      userGuess++;
+    }
+  } while (userGuess !== correctAnswer);
+  output += `✅ Correct guess! The answer is ${correctAnswer}\n\n`;
+
+  // 🌳 for loop: sum of first N natural numbers
+  output += "=== 🌳 for Loop (Sum of N Natural Numbers) ===\n";
+  let N = 10;
+  let sum = 0;
+  for (let j = 1; j <= N; j++) {
+    sum += j;
+  }
+  output += `Sum of first ${N} natural numbers = ${sum}\n\n`;
+
+  // 🌼 Nested for loop: multiplication table
+  output += "=== 🌼 Nested for Loop (Multiplication Table 1–5) ===\n";
+  for (let a = 1; a <= 5; a++) {
+    for (let b = 1; b <= 5; b++) {
+      output += `${a * b}\t`;
+    }
+    output += "\n";
+  }
+
+  document.getElementById("output").innerText = output;
+}
+
+  </script>
+</body>
+</html>

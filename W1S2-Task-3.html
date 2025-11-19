@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 3 - Break and Continue</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+/* style.css — Baby Soft Theme 👶 */
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg, #f9d1e4, #b5e8f7, #ffe6cc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4b4b4b;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 30px;
+  padding: 40px 50px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255, 182, 193, 0.4);
+  width: 85%;
+  max-width: 700px;
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  color: #ff69b4;
+  font-size: 2rem;
+  text-shadow: 0 0 10px #fff0f5;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(90deg, #f9a8d4, #a5f3fc);
+  border: none;
+  border-radius: 15px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  color: #4b4b4b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #a5f3fc, #f9a8d4);
+  box-shadow: 0 0 15px rgba(255, 192, 203, 0.6);
+}
+
+.output-box {
+  background: #fffafc;
+  border-radius: 20px;
+  margin-top: 25px;
+  padding: 20px;
+  text-align: left;
+  font-family: 'Courier New', monospace;
+  white-space: pre-wrap;
+  color: #555;
+  box-shadow: inset 0 0 10px rgba(255, 182, 193, 0.4);
+  font-size: 1rem;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧸 Task 3: Break & Continue in Loops</h1>
+    <p>Click the button below to run JavaScript examples and view outputs below 👇</p>
+    <button onclick="runBreakContinue()">Run Example</button>
+
+    <div id="output" class="output-box"></div>
+  </div>
+
+  <script>
+// script.js — Demonstrating break and continue 👶
+
+function runBreakContinue() {
+  let output = "";
+
+  // 🧩 Example 1: Using break (stop when the first prime is found)
+  output += "=== 🍼 Using break: Find the First Prime Between 10 and 20 ===\n";
+  for (let num = 10; num <= 20; num++) {
+    let isPrime = true;
+
+    for (let i = 2; i < num; i++) {
+      if (num % i === 0) {
+        isPrime = false;
+        break; // exit the inner loop
+      }
+    }
+
+    if (isPrime) {
+      output += `First prime number found: ${num}\n`;
+      break; // exit the outer loop after finding the first prime
+    }
+  }
+
+  // 🧸 Example 2: Using continue (print only odd numbers)
+  output += "\n=== 🧸 Using continue: Print Odd Numbers (1–20) ===\n";
+  for (let i = 1; i <= 20; i++) {
+    if (i % 2 === 0) continue; // skip even numbers
+    output += i + " ";
+  }
+
+  output += "\n\n✅ Loop demonstration complete!";
+  document.getElementById("output").innerText = output;
+}
+
+  </script>
+</body>
+</html>
