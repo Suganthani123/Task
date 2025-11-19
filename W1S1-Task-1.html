@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1 - Basic JavaScript & Console</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+/* style.css — Futuristic Technical Theme ⚙️ */
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Roboto Mono', monospace;
+  background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+  color: #c8f7ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: rgba(25, 40, 50, 0.9);
+  border-radius: 20px;
+  padding: 40px 50px;
+  text-align: center;
+  width: 80%;
+  max-width: 700px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #00eaff;
+  text-shadow: 0 0 10px #00ffff;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  color: #a6dcef;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(90deg, #00eaff, #00b4d8);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #00b4d8, #00eaff);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+.output-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  margin-top: 25px;
+  padding: 20px;
+  text-align: center;
+  color: #80eaff;
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>⚙️ Task 1: Basic JavaScript & Console</h1>
+    <p>Click the button below to run the JavaScript program.  
+    Open your browser console (<b>F12</b> → <b>Console</b>) to view results.</p>
+    <button onclick="runProgram()">Run Code</button>
+
+    <div id="output" class="output-box">
+      <p>🖥️ Output will appear in the browser console.</p>
+    </div>
+  </div>
+
+  <script>
+// script.js — Task 1: Basic JavaScript & Console ⚙️
+
+function runProgram() {
+  console.clear();
+  console.log("=== ⚙️ Basic JavaScript Program Demo ===");
+
+  // Using var
+  var name = "Suganthani";
+  console.log("var name =", name);
+  name = "Indhirani";
+  console.log("Modified var name =", name);
+
+  // Using let
+  let age = 20;
+  console.log("let age =", age);
+  age = 21;
+  console.log("Modified let age =", age);
+
+  // Using const
+  const country = "India";
+  console.log("const country =", country);
+  // Uncommenting below line will throw an error
+  // country = "USA";
+  console.log("const cannot be reassigned once declared.");
+
+  // Output with string concatenation
+  console.log("Hello, my name is " + name + ", I am " + age + " years old from " + country + ".");
+
+  // Output with template literals
+  console.log(`Using Template Literal → Name: ${name}, Age: ${age}, Country: ${country}`);
+
+  // Conditional example
+  if (age >= 18) {
+    console.log("✅ You are an adult.");
+  } else {
+    console.log("🚸 You are a minor.");
+  }
+
+  console.log("=== 🧠 Program End ===");
+}
+
+  </script>
+</body>
+</html>
